@@ -15,13 +15,13 @@ import {
 import {   Provider } from 'react-redux';
 import {Home} from './screen/home/';
 import { store } from './store';
+import AppContainer from './navigation/AppContainer';
 
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
       <Provider store={store}>
-        <StatusBar barStyle="dark-content" />
-        <Home />
+        <AppContainer />
       </Provider>
 
   );
