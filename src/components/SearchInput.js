@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, Dimensions, TextInput, Alert} from 'react-native';
+import {View, StyleSheet, Dimensions, TextInput, Alert, Text} from 'react-native';
 import {Picker} from '@react-native-community/picker';
 import {Color} from '../constants/Color';
 
@@ -23,11 +23,14 @@ const style = StyleSheet.create({
 });
 export default function SearchInput() {
   const [languages, setLanguages] = useState('jp');
+  const [pickerVisible, setPickerVisible] = useState(false)
 //   Alert.alert('rendered')
   return (
     <View style={style.searchContainer}>
+    <Text onPress={()=>{setPickerVisible(true)}}>{languages}</Text>
       <Picker
         style={style.picker}
+        
         selectedValue={languages}
         onValueChange={(itemValue, itemIndex) =>
           setLanguages(itemValue)

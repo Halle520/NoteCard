@@ -1,7 +1,7 @@
 import Card from './card';
 export const CARDS = [
   new Card(
-    1,
+    '1',
     'Suki McClunaghan',
     'Suki',
     'McClunaghan',
@@ -11,12 +11,12 @@ export const CARDS = [
     false,
   ),
   new Card(
-    2,
+    '2',
     'Sheridan Pleming',
     'Sheridan',
     'Pleming',
-    'https://picsum.photos/200',
     'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
+    'https://picsum.photos/200',
     'Ms',
     false,
   ),

@@ -5,6 +5,7 @@ import {
   Text,
   Dimensions,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import {Color} from '../constants/Color';
 
@@ -21,21 +22,28 @@ const style = StyleSheet.create({
     backgroundColor: Color.LIGHTYELLOW,
   },
   cardContent: {
-    justifyContent: 'center',
+    justifyContent: 'space-between',
+    height: W - 20,
+    overflow: 'hidden',
   },
   cardText: {
-    marginVertical: 3,
     textDecorationColor: Color.LIGHTYELLOW,
   },
 });
-export default ItemCard = ({word, on, kun, description}) => {
+
+export default ItemCard = ({item, navigation}) => {
   return (
-    <TouchableOpacity style={style.cardContainer}>
+    <TouchableOpacity
+      style={style.cardContainer}
+      onPress={() =>
+        navigation.navigate( 'Details',{
+          card: item
+        })
+      }>
       <View style={style.cardContent}>
-        <Text style={style.cardText}>Word: {word}</Text>
-        <Text style={style.cardText}>On: {on}</Text>
-        <Text style={style.cardText}>Kun: {kun}</Text>
-        <Text style={style.cardText}>Description: {description}</Text>
+        <Text style={style.cardText}>Word: {item.word}</Text>
+        <Text style={style.cardText}>On: {item.on}</Text>
+        <Text style={style.cardText}>Kun: {item.kun}</Text>
       </View>
     </TouchableOpacity>
   );
