@@ -1,11 +1,8 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import FormEdit from '../components/FormEdit'
+import React from 'react';
+import FormEdit from '../components/FormEdit';
 
 const EditCard = () => {
-    return (
-        <FormEdit />
-    )
-}
+  return <FormEdit />;
+};
 
-export default EditCard
+export default EditCard;

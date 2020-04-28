@@ -1,12 +1,6 @@
-import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Dimensions,
-  TextInput,
-  Alert,
-  Text,
-} from 'react-native';
+/* eslint-disable react-native/no-inline-styles */
+import React from 'react';
+import {View, StyleSheet, Dimensions, TextInput} from 'react-native';
 import {Color} from '../constants/Color';
 import SelectPicker from './SelectPicker';
 
@@ -14,6 +8,7 @@ const W = Dimensions.get('window').width / 3;
 const style = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
+    marginHorizontal: 10,
   },
 
   searchBox: {
@@ -30,7 +25,7 @@ export default function SearchInput() {
   //   Alert.alert('rendered')
   return (
     <View style={style.searchContainer}>
-      <View style={{flex:2 , justifyContent:'center'}}>
+      <View style={{flex: 2, justifyContent: 'center'}}>
         <SelectPicker />
       </View>
       <TextInput style={style.searchBox} />

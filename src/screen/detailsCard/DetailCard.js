@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, StyleSheet,Button} from 'react-native';
+import {View, Text, Image, StyleSheet, Button} from 'react-native';
 
 const style = StyleSheet.create({
   cardContainer: {
@@ -11,13 +11,19 @@ const style = StyleSheet.create({
 });
 export default class DetailCard extends Component {
   render() {
-    const {route,navigation} = this.props;
+    const {route, navigation} = this.props;
     const {card} = route.params;
     navigation.setOptions({
       headerRight: () => (
-        <Button onPress={() => {navigation.navigate('Edit Card')}} title="Edit" />
+        <Button
+          onPress={() => {
+            navigation.navigate('Edit Card');
+          }}
+          title="Edit"
+        />
       ),
-    })
+      headerBackTitle: 'Back',
+    });
     return (
       <View style={style.cardContainer}>
         <Text> {card.id} </Text>
@@ -26,13 +32,9 @@ export default class DetailCard extends Component {
         <Text> {card.kun} </Text>
         <Text> {card.description} </Text>
 
-        <Image
-                style={{width: 200, height: 200}}
-                source={{uri: card.image}}
-              />
+        <Image style={{width: 200, height: 200}} source={{uri: card.image}} />
         <Text> Save: {card.isSaved ? 'true' : 'false'} </Text>
       </View>
     );
   }
 }
-

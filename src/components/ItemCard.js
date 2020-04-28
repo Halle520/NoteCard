@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {Color} from '../constants/Color';
 import {useDispatch, useSelector} from 'react-redux';
-import {saveCardAction} from '../actions/card'
+import {saveCardAction} from '../actions/card';
 
 const W = Dimensions.get('window').width / 3;
 const style = StyleSheet.create({
@@ -43,10 +43,9 @@ const style = StyleSheet.create({
 });
 
 export default ItemCard = ({item, navigation}) => {
-  const card = useSelector(state=>state.card)
   const dispatch = useDispatch();
   const onSaveItem = (itemId) => {
-    dispatch(saveCardAction(itemId))
+    dispatch(saveCardAction(itemId));
   };
   return (
     <TouchableOpacity
@@ -62,7 +61,12 @@ export default ItemCard = ({item, navigation}) => {
         <Text style={style.cardText}>Kun: {item.kun}</Text>
       </View>
       <View style={style.btnSave}>
-        <Button title="+" onPress={() => {onSaveItem(item.id)}} />
+        <Button
+          title="+"
+          onPress={() => {
+            onSaveItem(item.id);
+          }}
+        />
       </View>
     </TouchableOpacity>
   );
